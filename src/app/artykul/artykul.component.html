@@ -1,0 +1,34 @@
+<!--<p>artykul works!</p>-->
+
+<div class="wysrodkuj">
+    <label>Strona: </label>
+    <input type="number" [(ngModel)]="stronnicowanie.strona">
+    <label>Ilość:</label>
+    <input type="number" [(ngModel)]="stronnicowanie.ilosc">
+    <button class="przesun" (click)="odswierz()">Przejdź</button>
+    <br>
+</div>
+<!--<app-artykul *ngFor="let k of Lista_artykulow" [artykul]="k" (dodajClick)="onDodajClick($event)" ></app-artykul>-->
+
+<br>
+<a routerLink="nowy">Dodaj nowy artykuł</a>
+<br>
+
+<br>
+<table border="1" rules="none" style="width:100%;table-layout:fixed;">
+    <tr *ngFor="let artykul of Lista_artykulow">
+        <td colspan="2">Nazwa: {{artykul.nazwa}}</td>
+        <td>Opis: {{artykul.opis}}</td> <td ALIGN=center><img src="https://a.allegroimg.com/s1024/0c01e2/04f72285470faa8b23e674d259d8" height="50" width="50"/></td>
+        <td colspan="2">Cena: {{artykul.cena}} zł</td>
+        <td colspan="2"><button (click)="onDodajClick(artykul.id)">Dodaj</button></td>   
+        <td><button [routerLink]="artykul.id" (click)="przejdzDoEdycji()">Przejdź do edycji</button></td>   
+    </tr>
+</table>
+<br>
+<!--
+<div *ngFor="let artykul of Lista_artykulow">
+    <span>
+        Nazwa: {{artykul.nazwa}}
+    </span>
+</div>
+-->

@@ -1,0 +1,12 @@
+<h1 *appAutoryzacja appZoltyTekst>Tworzenie interfejsów użytkownika</h1>
+
+<app-koszyk-component *appAutoryzacja></app-koszyk-component>
+<br>
+<router-outlet></router-outlet>
+
+<div class="guzik">
+    <button class="guzik1" *appAutoryzacja (click)="powrot()">Powrót do strony głównej</button>
+    <button class="guzik2" *ngIf="czyZalogowany()" (click)="wyloguj()">Wyloguj</button>
+</div>
+<!--<app-koszyk-component></app-koszyk-component>-->
+
